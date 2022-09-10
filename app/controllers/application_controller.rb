@@ -6,6 +6,26 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+
+  delete '/students/:id' do
+    yeeted = Student.find(params[:id])
+    yeeted.destroy
+    yeeted.to_json
+  end
+
+  delete '/teachers/:id' do
+    deleted = Teacher.find(params[:id])
+    deleted.destroy
+    deleted.to_json
+  end
+
+  delete '/courses/:id' do
+    deleted = Course.find(params[:id])
+    deleted.destroy
+    deleted.to_json
+  end
+
+#delete routes
   get '/courses' do
     all_courses = Course.all
     all_courses.to_json(only: [:id, :course_name, :course_period, :total_units, :fees_amount])
