@@ -12,4 +12,33 @@
 
 ActiveRecord::Schema.define(version: 2022_09_09_182723) do
 
+  create_table "courses", force: :cascade do |t|
+    t.string "course_name"
+    t.integer "fees_amount"
+    t.string "department"
+    t.integer "course_period"
+    t.integer "total_units"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "race"
+    t.string "planet"
+    t.integer "course_id"
+    t.integer "teacher_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string "name"
+    t.string "street_address"
+    t.string "specialisation"
+    t.integer "salary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end
