@@ -1,6 +1,6 @@
 puts "🌱 Seeding spices..."
 
-Seed your database here
+#Seed your database here
 100.times do
     seeded_students = Student.create(
         name: Faker::Name.name,
