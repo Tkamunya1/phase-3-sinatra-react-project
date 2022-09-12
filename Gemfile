@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby "2.7.4"
+
 # A DSL for quickly creating web applications
 # https://github.com/sinatra/sinatra
 gem "sinatra", "~> 2.1"
@@ -23,28 +25,29 @@ gem "activerecord", "~> 6.1"
 # Configures common Rake tasks for working with Active Record
 # https://github.com/sinatra-activerecord/sinatra-activerecord
 gem "sinatra-activerecord", "~> 2.0"
-ruby "2.7.4"
 
 # Run common tasks from the command line
 # https://github.com/ruby/rake
 gem "rake", "~> 13.0"
 
 # Provides functionality to interact with a SQLite3 database
-#gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
+
+gem "faker", "~> 2.18"
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"
- gem "faker"
 
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
 
-
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
 end
+
+
 
 # These gems will only be used when we are running tests
 group :test do
@@ -53,4 +56,9 @@ group :test do
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
 end
+
+group :production do
+  gem 'pg', '~> 1.4', '>= 1.4.3'
+end
+
 gem 'sinatra-contrib', '~> 2.2', '>= 2.2.2',require: false
