@@ -10,8 +10,10 @@ School users can add students, courses and teachers to their database with a sim
 - A separate React frontend application that interacts with the API to
   perform CRUD actions.
 
+## Frontend Repo
+https://github.com/Tkamunya1/Schooling
 
-## Frontend link
+## Deployed Link
 https://schooling-lb9gri2fl-tkamunya1.vercel.app/
 
 
